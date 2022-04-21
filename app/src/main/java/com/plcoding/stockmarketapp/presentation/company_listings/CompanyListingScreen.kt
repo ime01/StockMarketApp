@@ -1,5 +1,6 @@
 package com.plcoding.stockmarketapp.presentation.company_listings
 
+import android.util.Log
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -52,8 +53,11 @@ fun CompanyListingScreen(navigator:DestinationsNavigator, viewModel: CompanyList
    }) {
 
    LazyColumn(modifier = Modifier.fillMaxSize()){
+
     items(state.companies.size){i->
-     val company =state.companies[1]
+
+     val company =state.companies[i]
+     Log.d("Value", "${state.companies}")
 
      CompanyItem(
       company = company,
